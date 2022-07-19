@@ -1,5 +1,5 @@
 Jenkin Installation on Ubuntu
-==================================
+==================================x=======
 
 1. install java
 sudo apt install default-jre
