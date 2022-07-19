@@ -1,0 +1,74 @@
+Jenkin Installation on Ubuntu
+==================================
+
+1. install java
+sudo apt install default-jre
+java -version
+
+2. Jenkin Installation
+
+i. First, add the repository key to the system:
+
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+ 
+ii. Let’s append the Debian package repository address to the server’s sources.list:
+
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+iii. Run package update
+
+ apt-get update
+iv. Installing the jenkins 
+
+apt-get install jenkins
+
+v. To start the jenkins 
+
+systemctl start jenkins
+
+vi. To check jenkins service run or not 
+
+systemctl status jenkins 
+
+
+v. To stop jenkins 
+
+systemctl stop jenkins
+
+
+====================================
+
+
+Jenkins Installation On Amazon Linux
+======================================
+======================================
+Install Jenkins on Amazon Linux 2 instance:
+Step-1: Launch the basic EC2 instance with 8080 port enable in the security group.
+
+Step-2: Update the software package of the instance using the below command:
+
+sudo yum update -y
+
+Step-3: Install java packages and remove the oldest version of java if any:
+
+sudo yum install java-1.8.0
+
+sudo yum remove java-1.7.0-openjdk
+
+Step-4: Add the Jenkins repo:
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+
+Step-5: Import the key file:
+
+Note: Below is the2 hyphens attached to the import keyword.
+
+sudo rpm — import https://pkg.jenkins.io/redhat/jenkins.io.key
+
+Step-6: Install Jenkins using the below command:
+
+sudo yum install jenkins -y
+
+Step-7: Start the Jenkins service:
+
+sudo service jenkins start
